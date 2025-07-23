@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f8f8fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+    background-color: #DFD0B8;
+}
+
+.main {
+  display: flex;
+  width: 85%;
+  max-width: 1000px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.image {
+  flex: 1.2;
+  background-color: #eef1ff;
+  overflow: hidden;
+  border-radius: 1%;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.5;
+}
+
+
+.form-container {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #948979;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: #222831;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='gray' viewBox='0 0 10 10'%3E%3Cpath d='M0 3h10L5 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.65rem auto;
+}
+
+form button {
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  background: #222831;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #222831;
+}
+
+#message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+}
