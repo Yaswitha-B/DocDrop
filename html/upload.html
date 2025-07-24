@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Notes | NoteShare</title>
+  <link rel="stylesheet" href="../css/upload.css">
+</head>
+<body>
+  <div class="main">
+    <h2>Upload Your Notes</h2>
+    <form id="uploadForm">
+      <input type="text" id="userid" placeholder="Your ID" required />
+
+      <select id="department" required>
+        <option value="">Select Department</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+        <option value="CIVIL">CIVIL</option>
+      </select>
+
+        <select id="year" required>
+        <option value="">Select Year</option>
+        <option value="1st">1st Year</option>
+        <option value="2nd">2nd Year</option>
+        <option value="3rd">3rd Year</option>
+        <option value="4th">4th Year</option>
+        </select>
+
+      <select id="subject" required>
+        <option value="">Select Subject</option>
+      </select>
+
+      <input type="text" id="customSubject" placeholder="Enter custom subject..." style="display: none;" />
+
+      <textarea id="description" placeholder="Short Description..." rows="3" required></textarea>
+      <input type="file" id="fileInput" accept=".pdf,.doc,.docx" required />
+
+      <button type="submit">Upload</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script src="../javascript/upload.js" type="module"></script>
+</body>
+</html>
