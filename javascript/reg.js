@@ -1,8 +1,9 @@
+import * as ENV from './env.js';
 import * as Appwrite from "https://cdn.jsdelivr.net/npm/appwrite@13.0.0/+esm";
 
 const client = new Appwrite.Client()
-  .setEndpoint('https://nyc.cloud.appwrite.io/v1')
-  .setProject('6881bb6b0033e5d985b5');
+  .setEndpoint(ENV.ENDPOINT)
+  .setProject(ENV.PROJECT_ID);
 
 const account = new Appwrite.Account(client);
 const databases = new Appwrite.Databases(client);
@@ -26,8 +27,8 @@ form.addEventListener("submit", async (e) => {
     const uid = user.$id;
 
     await databases.createDocument(
-      '6881cb80000d80225949', // Database ID
-      '6881cd610003217abc6f', // Collection ID
+      ENV.DATABASE_ID,
+      ENV.COLLECTION_ID,
       uid,
       {
         name,

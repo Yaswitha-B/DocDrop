@@ -1,8 +1,9 @@
+import * as ENV from './env.js';
 import * as Appwrite from "https://cdn.jsdelivr.net/npm/appwrite@13.0.0/+esm";
 
 const client = new Appwrite.Client()
-  .setEndpoint("https://nyc.cloud.appwrite.io/v1")
-  .setProject("6881bb6b0033e5d985b5");
+  .setEndpoint(ENV.ENDPOINT)
+  .setProject(ENV.PROJECT_ID);
 
 const storage = new Appwrite.Storage(client);
 const databases = new Appwrite.Databases(client);
@@ -13,7 +14,6 @@ const message = document.getElementById("message");
 const departmentSelect = document.getElementById("department");
 const subjectSelect = document.getElementById("subject");
 
-// 💡 Subject map based on department
 const subjectMap = {
   CSE: ["DBMS", "DSA", "OS", "CN", "AI", "Other"],
   ECE: ["VLSI", "Signal Processing", "EM Theory", "Other"],
@@ -22,7 +22,6 @@ const subjectMap = {
   EEE: ["Power Systems", "Control Systems", "Electrical Machines", "Other"]
 };
 
-// 🔧 Create & add a custom subject input
 const customSubjectInput = document.createElement("input");
 customSubjectInput.type = "text";
 customSubjectInput.id = "customSubject";
@@ -87,7 +86,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const fileResponse = await storage.createFile(
-      "68826b5b002956704e1c", // ✅ Your Bucket ID
+      ENV.BUCKET_ID,
       Appwrite.ID.unique(),
       file,
       [
@@ -97,8 +96,8 @@ form.addEventListener("submit", async (e) => {
     );
 
     await databases.createDocument(
-      "6881cb80000d80225949", // ✅ Database ID
-      "6881cd610003217abc6f", // ✅ Collection ID
+      ENV.DATABASE_ID, 
+      ENV.COLLECTION_ID,
       Appwrite.ID.unique(),
       {
         userid,

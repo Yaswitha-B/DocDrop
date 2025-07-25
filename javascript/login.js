@@ -1,8 +1,9 @@
+import * as ENV from './env.js';
 import * as Appwrite from "https://cdn.jsdelivr.net/npm/appwrite@13.0.0/+esm";
 
 const client = new Appwrite.Client()
-  .setEndpoint('https://nyc.cloud.appwrite.io/v1')
-  .setProject('6881bb6b0033e5d985b5');         // ✅ Your Project ID
+  .setEndpoint(ENV.ENDPOINT)
+  .setProject(ENV.PROJECT_ID);     
 
 const account = new Appwrite.Account(client);
 
@@ -16,13 +17,22 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value.trim();
 
   try {
-    // ✅ Log in the user by creating a session
+    const currentUser = await account.get();
+    message.textContent = "⚠️ Already logged in. Redirecting...";
+    message.style.color = "orange";
+    window.location.href = "dashboard.html";
+
+  } catch {
+    // if no session exists, next part creates it
+  }
+
+  try {
     await account.createEmailSession(email, password);
 
     message.textContent = "✅ Login successful!";
     message.style.color = "green";
+    window.location.href = "dashboard.html"
 
-    // 🛑 No redirect – stays on the page
   } catch (error) {
     console.error("❌ Login Error:", error);
 
