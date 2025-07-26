@@ -3,42 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register | NoteShare</title>
-  <link rel="stylesheet" href="../css/reg.css"/>
+  <title>Login | NoteShare</title>
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
   <div class="main">
     <div class="image">
-      <img src="../Images/cover.png" alt="Cover Image">
+      <img src="../Images/login.png" alt="Cover">
     </div>
     <div class="form-container">
-      <h2>Create Your Account</h2>
-      <form id="registerForm">
-        <input type="text" id="name" placeholder="Full Name" required />
+      <h2>Login to Your Account</h2>
+      <form id="loginForm">
         <input type="email" id="email" placeholder="Email" required />
         <input type="password" id="password" placeholder="Password" required />
-        <input type="text" id="userid" placeholder="User ID" required />
-        <input type="text" id="department" placeholder="Department (e.g. CSE)" required />
-
-        <!-- ✅ Fixed year values -->
-        <select id="year" required>
-          <option value="">Select Year</option>
-          <option value="1">1st Year</option>
-          <option value="2">2nd Year</option>
-          <option value="3">3rd Year</option>
-          <option value="4">4th Year</option>
-        </select>
-
-        <input type="text" id="section" placeholder="Section (e.g. CSE-1)" required />
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
       </form>
       <p id="message"></p>
     </div>
   </div>
 
-  <script src="../javascript/env.js"></script>
+  <script type="module" src="../javascript/env.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
-  <script type="module" src="../javascript/reg.js"></script>
-
+  <script type="module" src="../javascript/login.js"></script>
 </body>
 </html>

@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DocDrop Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-    Hello World
-    <script src="../javascript/env.js"></script>
+    <div id="userEmail"></div>
+    <div class="search-container">
+        <input type="text" id="fileNameSearch" placeholder="File Name">
+        <input type="text" id="userIdSearch" placeholder="User ID">
+        <select id="departmentFilter">
+            <option value="">Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="MECH">MECH</option>
+        </select>
+        <select id="yearFilter">
+            <option value="">Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+        </select>
+        <select id="subjectFilter" disabled>
+            <option value="">Select Subject</option>
+        </select>
+        <input type="text" id="customSubject" placeholder="Custom Subject" style="display: none;">
+        <button id="searchBtn">Search</button>
+        <a href="upload.html" class="upload-btn">Upload New File</a>
+    </div>
+    <div id="resultsContainer" class="results-container"></div>
+    <script type="module" src="../javascript/env.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
-  <script type="module" src="../javascript/dashboard.js"></script>
+    <script type="module" src="../javascript/dashboard.js"></script>
 </body>
 </html>

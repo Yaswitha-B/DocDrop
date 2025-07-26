@@ -31,7 +31,6 @@ customSubjectInput.required = false;
 customSubjectInput.style.display = "none";
 subjectSelect.insertAdjacentElement("afterend", customSubjectInput);
 
-// 👂 Department change triggers subject options
 departmentSelect.addEventListener("change", () => {
   const selectedDept = departmentSelect.value.trim().toUpperCase();
   subjectSelect.innerHTML = `<option value="">Select Subject</option>`;
